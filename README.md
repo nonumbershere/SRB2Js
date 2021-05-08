@@ -4,7 +4,7 @@
 3) View the [Github](https://github.com/nonumbershere/SRB2Js) for more detail.
 
 # Updates
-~~~ Nothing ~~~
+~ Nothing
 
 # Includes
 - Injection
@@ -14,4 +14,4 @@
 - Offsets
 
 # Added
-~~~ Nothing ~~~
+~ Nothing
