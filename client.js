@@ -54,10 +54,10 @@ module.exports.smartWrite = function (address, value, type, output) {
     if (output) output();
 }
 module.exports.offsets = {
-    rings: 0x4DBFD8
-}
-module.exports.smartOffsets = {
-    rings: current.offsets + current.module
+    rings: 0x4DBFD8,
+    score: 0x4DC048,
+    speed: 0x4DC052,
+    lives: 0x4DC090
 }
 module.exports.setRings = function (value, output, successoutput, erroroutput) {
     if (current.isInjected) {
@@ -67,4 +67,101 @@ module.exports.setRings = function (value, output, successoutput, erroroutput) {
         if (erroroutput) erroroutput();
     }
     if (output) output();
+}
+module.exports.setScore = function (value, output, successoutput, erroroutput) {
+    if (current.isInjected) {
+        current.smartWrite(current.offsets.score, value, 'INT');
+        if (successoutput) successoutput();
+    } else {
+        if (erroroutput) erroroutput();
+    }
+    if (output) output();
+}
+module.exports.setSpeed = function (value, output, successoutput, erroroutput) {
+    if (current.isInjected) {
+        current.smartWrite(current.offsets.speed, value, 'INT');
+        if (successoutput) successoutput();
+    } else {
+        if (erroroutput) erroroutput();
+    }
+    if (output) output();
+}
+module.exports.readint = function(address, type, erroroutput) {
+    return mem.readMemory
+    (current.handle, address, type, function(error) {
+        if (error) {
+            erroroutput();
+        }
+    })
+}
+module.exports.returnRings = function (output, successoutput, erroroutput) {
+    if (current.isInjected) {
+         current.readint(current.offsets.rings, 'int');
+
+        if (successoutput) successoutput();
+    } else {
+        if (erroroutput) erroroutput();
+    }
+    if (output) output();
+}
+module.exports.returnScore = function (output, successoutput, erroroutput) {
+    if (current.isInjected) {
+         current.readint(current.offsets.score, 'int');
+
+        if (successoutput) successoutput();
+    } else {
+        if (erroroutput) erroroutput();
+    }
+    if (output) output();
+}
+module.exports.returnSpeed = function (output, successoutput, erroroutput) {
+    if (current.isInjected) {
+        current.readint(current.offsets.speed, 'int');
+
+        if (successoutput) successoutput();
+    } else {
+        if (erroroutput) erroroutput();
+    }
+    if (output) output();
+}
+module.exports.addRings = function (value, output, successoutput, erroroutput) {
+    if (current.isInjected) {
+        var currentValue = current.returnRings();
+        var lastValue = currentValue - value;
+        current.setRings(lastValue);
+
+        if (successoutput) successoutput();
+    } else {
+        if (erroroutput) erroroutput();
+    }
+    if (output) output();
+}
+module.exports.addSpeed = function (value, output, successoutput, erroroutput) {
+    if (current.isInjected) {
+        var currentValue = current.returnSpeed();
+        var lastValue = currentValue - value;
+        current.setRings(lastValue);
+
+        if (successoutput) successoutput();
+    } else {
+        if (erroroutput) erroroutput();
+    }
+    if (output) output();
+}
+module.exports.addScore = function (value, output, successoutput, erroroutput) {
+    if (current.isInjected) {
+        var currentValue = current.returnScore();
+        var lastValue = currentValue - value;
+        current.setRings(lastValue);
+
+        if (successoutput) successoutput();
+    } else {
+        if (erroroutput) erroroutput();
+    }
+    if (output) output();
+}
+module.exports.smartOffsets = {
+    rings: current.offsets.rings + current.module,
+    score: current.offsets.socre + current.module,
+    speed: current.offsets.speed + current.module
 }
