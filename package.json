@@ -1,0 +1,34 @@
+{
+  "name": "amxhg-srb2",
+  "version": "1.0.8",
+  "description": "Create your own SRB2 hacks!",
+  "main": "client.js",
+  "bin": {
+    "techietime": "./client.js"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nonumbershere/SRB2Js.git"
+  },
+  "keywords": [
+    "srb2",
+    "hacking"
+  ],
+  "author": "Lapide",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "memoryjs": "^3.4.0",
+    "techietime": "github:techiediaries/techietime"
+  },
+  "bugs": {
+    "url": "https://github.com/nonumbershere/SRB2Js/issues"
+  },
+  "homepage": "https://github.com/nonumbershere/SRB2Js/#readme",
+  "engines": {
+    "node": ">= 8.0.0"
+  }
+}
