@@ -1,0 +1,29 @@
+{
+  "name": "srb2js",
+  "version": "0.0.8",
+  "description": "A Javascript module that allows you to create SRB2 hacks with Javascript.",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lapide",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "memoryjs": "^3.4.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nonumbershere/SRB2Js.git"
+  },
+  "keywords": [
+    "srb2",
+    "hacking",
+    "advanced"
+  ],
+  "bugs": {
+    "url": "https://github.com/nonumbershere/SRB2Js/issues"
+  },
+  "homepage": "https://github.com/nonumbershere/SRB2Js#readme"
+}
